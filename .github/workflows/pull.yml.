@@ -1,0 +1,19 @@
+name: Pull Code on Develop Push
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  pull_code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Copy to Specific Folder
+        run: |
+          mkdir -p C:\Users\ASUS\Desktop\github-folder
+          cp -R * C:\Users\ASUS\Desktop\github-folder
